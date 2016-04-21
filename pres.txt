@@ -1,0 +1,262 @@
+SQL for developers: a six week curriculum
+=========================================
+
+I would like to teach a hands on course in SQL for developers. In it,
+students should build their own database to model an application they
+care about, populate it with data that reflect ongoing use of the
+application, perform a wide range of simple and advanced queries on the
+data, in order to support the application itself and reporting on the
+application, and take steps to make sure all these things can be done
+within reasonable limits of time and space.
+
+Prerequisites: you should be able to connect to a database with minimal
+assistance and issue basic SQL queries. Consider boning up on your
+command-line-compatible editor (vim, emacs, nano, ...) since by week 4
+at the latest we will be making heavy use of the psql command line
+client and editing complex queries there.
+
+\pagebreak
+
+Week 1: Introduction and the relational data model
+--------------------------------------------------
+
+For the first class, let's talk about how we got to relational
+databases, how they compare to other kinds of databases, and the
+approach we'll take in the course.
+
+### Relational vs other databases
+
+Hierarchical: IMS, 1966-now. Apollo program BOM.
+
+Network: Designed by CODASYL in 1969. DDL, DML. COBOL and PL/I. Major
+implementations: IDMS, IDS
+
+Relational: Edgar F. "Ted" Codd 1969/1970. IBM was slow to implement,
+and when they did, Codd was not included, nor was his original
+relational language "Alpha". SEQUEL invented instead, shortened to SQL,
+was used also by Oracle, Sybase, and by 1986 was an ANSI standard.
+
+"Beyond" relational: Object databases, document / key value stores,
+graph databases
+
+Column vs row-oriented
+
+Relations to tables
+
+### The rest of the course
+
+The goal for the course is to design and build a moderately complex
+database to support a hypothetical application of the student's choice,
+populate it with test or simulated data, and use it as a basis for
+simple and advanced SQL queries, analyzing their performance and
+discussing other real-world implications and concerns.
+
+We'll use PostgreSQL 9.5 or greater, installed in the location of the
+student's choice.
+
+### Practicalities
+
+psql command line client
+
+Pager set up, `\x`
+
+`\e`
+
+`\d...`
+
+### For week 2
+
+You must be set up and running with your DB and client tools. You should
+come to week 2 with an idea and some design sketches for a
+database-driven application that can serve as a basis for the rest of
+the course.
+
+\pagebreak
+
+Week 2 + 3: Data design
+-------------------
+
+### Basic modeling
+
+Entity-relationship
+
+Enums, domains, and data types
+
+NULL
+
+Keys, Foreign Keys
+
+Natural vs artificial IDs
+
+### Normalization
+
+Normalization is the DRY of data
+
+These normal forms "stack;" meeting one is dependent first on meeting
+all prior forms.
+
+First normal form (1NF): All column values are singular. Achieved by...creating more tables.
+
+Second normal form (2NF): We have to get into candidate keys, prime vs
+non-prime attributes. Strictly speaking, all non-prime attributes must
+depend on the whole of any candidate key, and never on a subset of any
+candidate key. Achieved by...creating more tables.
+
+Third normal form (3NF): "Every non-prime attribute of R is
+non-transitively dependent on every key of R" or "a non-key field must
+provide a fact about the key, us[e] the whole key, and nothing but the key."
+
+Boyce-Codd normal form (BCNF/3.5NF) and Elementary Key Normal Form (EKNF):
+Where a "superkey" is a non-minimal candidate key, there are some
+nuanced scenarios under which 3NF can leave redundancies or dependencies
+between superkeys. These two somewhat incompatible normal forms express
+the resolution of these scenarios.
+
+3NF is generally what is meant when we say a database is normalized,
+although 4NF and 5NF have more to say about expressing dependencies in a
+non-redundant way, and will generally lead to still more decomposition
+of tables if correctly followed. Likewise with 6NF, which has two
+competing specific uses.
+
+Normalization for OLTP vs OLAP, Star/snowflake schemas
+
+### For week 3
+
+For week 3 you should complete simple ER modeling of your application
+and have a draft of your DB schema for PostgreSQL. In the week 3 class
+we'll refine our designs and hit these more advanced design concepts:
+
+### Tricky things
+
+Modeling inheritance
+
+Modeling hierarchies
+
+### Higher-level design: composing relations
+
+Views
+
+Triggers
+
+### For week 4
+
+Complete your design and sketch out the application processes that
+create the data; we'll use these as a basis for creating or simulating
+data going forward.
+
+\pagebreak
+
+Week 4: Creating data
+---------------------
+
+### Complex DML
+
+INSERT...SELECT
+
+UPDATE...FROM
+
+DELETE FROM...USING
+
+### Concurrency
+
+Consistency models
+
+Locking
+
+Transactions, savepoints, MVCC
+
+(Don't spend too much time on concurrency, but rather try to get a head
+start on the week 5 stuff.)
+
+### For week 5:
+
+Have good processes to repeatedly simulate data generation such that we
+can get representative query results, and use them to determine where
+performance improvements need to be made.
+
+\pagebreak
+
+Week 5: Advanced Querying
+-------------------------
+
+### Joins
+
+Inner joins
+
+Outer joins
+
+What, I can join on myself?
+
+### Aggregation
+
+GROUP BY along with COUNT, MIN, MAX, ...
+
+HAVING
+
+Window functions, DISTINCT BY, and other roll-ups
+
+Table sampling (woo, PostgreSQL 9.5)
+
+### Subqueries
+
+"Inline views"
+
+Exists, IN
+
+Correlated subqueries
+
+CTEs
+
+Revisit hierarchies with recursive CTEs
+
+### Miscellaneous
+
+SELECT DISTINCT
+
+UNION
+
+### For week 6
+
+You should come up with still more useful queries, ideas for views, many
+of which should need some performance improvement.
+
+\pagebreak
+
+Week 6: Performance & Indexing
+------------------------------
+
+### Performance
+
+Interpreting EXPLAIN output: circle back to relational operations
+
+Ordering, ranges
+
+### Indexing
+
+What is an index really?
+
+Types of indexes
+
+Tradeoffs
+
+### PostgreSQL vs MySQL vs ...
+
+\pagebreak
+
+Appendix A: More resources
+-------------------
+
+[18+ Best Online Resources for Learning SQL and Database Concepts](
+http://www.vertabelo.com/blog/notes-from-the-lab/18-best-online-resources-for-learning-sql-and-database
+)
+
+[Jepsen series on distributed systems correctness](
+https://aphyr.com/tags/Jepsen )
+
+[Readings in Database Systems]( http://www.redbook.io/ )
+
+Appendix B: Sources
+-------------------
+
+[A Simple Guide to Five Normal Forms in Relational Database Theory](
+http://www.bkent.net/Doc/simple5.htm )
