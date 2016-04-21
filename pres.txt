@@ -294,3 +294,31 @@ http://www.bkent.net/Doc/simple5.htm )
 
 [Highly Available Transactions: Virtues and Limitations](
 http://www.bailis.org/papers/hat-vldb2014.pdf )
+
+Appendix C: Impact on priorities/values
+---------------------------------------
+
+### Company wide priorities
+
+ * Customer Experience: Less downtime, faster fixing of bugs due to more
+   developers being better acquainted with core technology
+
+ * Sustainable Growth
+
+     - Developers knowing SQL better will increase engineering team
+       velocity
+  
+     - Developers will be able to make better use of existing tech
+       infrastructure and avoid increased costs
+
+ * Team: This has been identified to me directly by two engineers as an
+   area of growth they are most interested in
+
+### Core values
+
+ * Pursue new and creative ideas: Relational data and SQL, though over
+   40 years old, are still ideas about which we are working out the
+   ramifications, and are not easy to master even though they are at the
+   heart of our operations
+
+ * Learn. Grow. Repeat.
