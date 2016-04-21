@@ -295,8 +295,13 @@ http://www.bkent.net/Doc/simple5.htm )
 [Highly Available Transactions: Virtues and Limitations](
 http://www.bailis.org/papers/hat-vldb2014.pdf )
 
+\pagebreak
+
 Appendix C: Impact on priorities/values
 ---------------------------------------
+
+![Album cover: "Speakin' My Piece" by Horace Parlan](
+speakin-my-piece-horace-parlan.jpg )
 
 ### Company wide priorities
 
