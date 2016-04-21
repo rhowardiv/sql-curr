@@ -9,11 +9,18 @@ data, in order to support the application itself and reporting on the
 application, and take steps to make sure all these things can be done
 within reasonable limits of time and space.
 
-Prerequisites: you should be able to connect to a database with minimal
-assistance and issue basic SQL queries. Consider boning up on your
-command-line-compatible editor (vim, emacs, nano, ...) since by week 4
-at the latest we will be making heavy use of the psql command line
-client and editing complex queries there.
+Prerequisites: you should
+
+ * be able to connect to a database with minimal assistance and issue
+   basic SQL queries
+
+ * consider boning up on your command-line-resident editor (`vim`,
+   `emacs`, `nano`, ...) since by week 4 at the latest we will be making
+   heavy use of the psql command line client and editing complex queries
+   there
+
+ * be able to automate the creation of simulated data for a hypothetical
+   application you will be designing a database for
 
 \pagebreak
 
@@ -37,11 +44,9 @@ relational language "Alpha". SEQUEL invented instead, shortened to SQL,
 was used also by Oracle, Sybase, and by 1986 was an ANSI standard.
 
 "Beyond" relational: Object databases, document / key value stores,
-graph databases
+graph databases, column-oriented databases
 
-Column vs row-oriented
-
-Relations to tables
+Relations and tables: well, which is it?
 
 ### The rest of the course
 
@@ -159,7 +164,8 @@ DELETE FROM...USING
 
 ### Concurrency
 
-Consistency models
+Consistency models -- PostgreSQL, like most databases, is not
+serializable by default!
 
 Locking
 
@@ -225,21 +231,31 @@ of which should need some performance improvement.
 Week 6: Performance & Indexing
 ------------------------------
 
+Now that you have a fully modeled application let's make it work for
+real.
+
 ### Performance
+
+The query execution plan
 
 Interpreting EXPLAIN output: circle back to relational operations
 
-Ordering, ranges
+How ordering and range conditions affect performance, especially in
+conjunction with...
 
 ### Indexing
 
 What is an index really?
 
-Types of indexes
+Types of indexes: B-tree, GiST, GIN, BRIN
 
 Tradeoffs
 
+Things that can affect usage: Field cardinality, statistics, ANALYZE
+
 ### PostgreSQL vs MySQL vs ...
+
+What other options are out there and how do they compare?
 
 \pagebreak
 
@@ -260,3 +276,6 @@ Appendix B: Sources
 
 [A Simple Guide to Five Normal Forms in Relational Database Theory](
 http://www.bkent.net/Doc/simple5.htm )
+
+[Highly Available Transactions: Virtues and Limitations](
+http://www.bailis.org/papers/hat-vldb2014.pdf )
