@@ -1,6 +1,8 @@
 SQL for developers: a six week curriculum
 =========================================
 
+![Album cover: "Workout" by Hank Mobley]( workout-hank-mobley.jpg )
+
 I would like to teach a hands on course in SQL for developers. In it,
 students should build their own database to model an application they
 care about, populate it with data that reflect ongoing use of the
@@ -26,6 +28,9 @@ Prerequisites: you should
 
 Week 1: Introduction and the relational data model
 --------------------------------------------------
+
+![Album cover: "Newk's Time" by Sonny Rollins](
+newks-time-sonnry-rollins.jpg )
 
 For the first class, let's talk about how we got to relational
 databases, how they compare to other kinds of databases, and the
@@ -80,6 +85,9 @@ the course.
 
 Week 2 + 3: Data design
 -------------------
+
+![Album cover: "Off To The Races" by Donald Byrd](
+donald-byrd-off-to-the-races.jpg )
 
 ### Basic modeling
 
@@ -154,6 +162,9 @@ data going forward.
 Week 4: Creating data
 ---------------------
 
+![Album cover: "Gettin' Around" by Dexter Gordon](
+gettin-around-dexter-gordon.jpg )
+
 ### Complex DML
 
 INSERT...SELECT
@@ -184,6 +195,8 @@ performance improvements need to be made.
 
 Week 5: Advanced Querying
 -------------------------
+
+![Album cover: "Una Mas" by Kenny Dorham]( una-mas-kenny-dorham.jpg )
 
 ### Joins
 
@@ -230,6 +243,8 @@ of which should need some performance improvement.
 
 Week 6: Performance & Indexing
 ------------------------------
+
+![Album cover: "Judgment" by Andrew Hill]( judgment-andrew-hill.jpg )
 
 Now that you have a fully modeled application let's make it work for
 real.
