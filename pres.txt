@@ -100,7 +100,8 @@ Normalization is the DRY of data
 These normal forms "stack;" meeting one is dependent first on meeting
 all prior forms.
 
-First normal form (1NF): All column values are singular. Achieved by...creating more tables.
+First normal form (1NF): All column values are singular. Achieved
+by...creating more tables.
 
 Second normal form (2NF): We have to get into candidate keys, prime vs
 non-prime attributes. Strictly speaking, all non-prime attributes must
@@ -109,13 +110,14 @@ candidate key. Achieved by...creating more tables.
 
 Third normal form (3NF): "Every non-prime attribute of R is
 non-transitively dependent on every key of R" or "a non-key field must
-provide a fact about the key, us[e] the whole key, and nothing but the key."
+provide a fact about the key, us[e] the whole key, and nothing but the
+key."
 
-Boyce-Codd normal form (BCNF/3.5NF) and Elementary Key Normal Form (EKNF):
-Where a "superkey" is a non-minimal candidate key, there are some
-nuanced scenarios under which 3NF can leave redundancies or dependencies
-between superkeys. These two somewhat incompatible normal forms express
-the resolution of these scenarios.
+Boyce-Codd normal form (BCNF/3.5NF) and Elementary Key Normal Form
+(EKNF): Where a "superkey" is a non-minimal candidate key, there are
+some nuanced scenarios under which 3NF can leave redundancies or
+dependencies between superkeys. These two somewhat incompatible normal
+forms express the resolution of these scenarios.
 
 3NF is generally what is meant when we say a database is normalized,
 although 4NF and 5NF have more to say about expressing dependencies in a
