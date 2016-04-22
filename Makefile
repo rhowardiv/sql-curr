@@ -1,3 +1,4 @@
+# from https://gist.github.com/rhowardiv/bb19895617fe0487781d
 export SHELL := /bin/bash
 .PHONY: default pdf html view clean
 
